@@ -1,0 +1,39 @@
+# The .conkyrc configuration for Conky-Joey
+alignment top_left 
+background no
+update_interval 1
+cpu_avg_samples 2
+default_color ffffff
+
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+
+gap_x 1035
+gap_y 660
+max_specials 1024
+max_user_text 10000
+maximum_width 1600
+minimum_size 175
+net_avg_samples 2
+no_buffers yes
+override_utf8_locale yes
+own_window yes
+#own_window_colour FFFFFF	# Srsly, there is no fscking need to touch this
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager #Unless you have super Dalek power don't touch any of these variables!
+own_window_transparent yes  # Don't get anywhere near that, NO REALLY DON'T!
+own_window_type override 	# Do not touch this unless you've totally lost it!
+pad_percents 2			
+short_units yes			
+stippled_borders 0
+text_buffer_size 8000
+total_run_times 0
+update_interval 1.0
+uppercase no
+use_spacer right
+use_xft yes
+
+TEXT
+${font Geosans Light:pixelsize=60}${time %H:%M:%S}${font}
+${font Satellite:pixelsize=50}${time %V} I ${time  %d  %m, %Y}${font}
+${font Zegoe Light:pixelsize=21}POWER: ${battery_percent}%  ROOT: ${fs_used /}  HOME: ${fs_used /home}${font}
