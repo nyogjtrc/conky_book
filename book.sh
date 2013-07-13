@@ -32,9 +32,12 @@ install_conky_joey() {
     fc-cache -fv
 }
 
-rerun() {
-    killall conky
+_start() {
     ~/conky_book/conky.start.sh
+}
+
+_stop() {
+    killall conky
 }
 
 case $1 in
@@ -51,7 +54,11 @@ case $1 in
         _uninstall
         ;;
     restart)
-        rerun
+        _start
+        _stop
+        ;;
+    stop)
+        _stop
         ;;
     *)
         ls -1 package
