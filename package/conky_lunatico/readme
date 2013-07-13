@@ -1,0 +1,30 @@
+cp conky_lunatico.tar.bz2 ~
+tar zxf ~/conky_lunatico.tar.bz2
+
+To run:
+
+conky -c ~/.conky/conkyrc_lunatico
+
+
+To run at startup create the following script:
+
+touch run_conky
+
+And add the following to it:
+
+#!/bin/bash
+sleep 20
+conky -c ~/.conky/conkyrc_lunatico
+
+Make it executable with:
+
+chmod a+x run_conky
+
+And finally add this to your startup applications.
+Go to System -> Preferences -> startup applications
+Add a new one called Conky with the command:
+
+~/run_conky
+
+Enjoy!
+

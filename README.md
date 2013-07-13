@@ -16,6 +16,10 @@ install breaking bad conky
 
 ``book.sh 1``
 
+install conky_lunatico
+
+``book.sh 2``
+
 ##conky list
 
  * breaking bad conky
