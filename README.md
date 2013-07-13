@@ -1,14 +1,21 @@
-conky book
-==========
+# conky book
 
 collection of some nice conky.
 
-how to
-------
+## how to
 
-``install.sh 1``
+list conky collection
 
-conky list
-----------
+``book.sh``
+
+unistall conky
+
+``book.sh uninstall``
+
+install breaking bad conky
+
+``book.sh 1``
+
+##conky list
 
  * breaking bad conky
