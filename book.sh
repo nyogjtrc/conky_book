@@ -11,6 +11,7 @@ install_breaking_bad() {
     #create new link of conky
     ln -s ~/conky_book/package/breaking\ bad\ conky/.conky ~/.conky
     ln -s ~/conky_book/package/breaking\ bad\ conky/conkyrc ~/.conkyrc
+    cp ~/conky_book/package/breaking\ bad\ conky/fonts/* ~/.fonts
 }
 
 install_conky_lunatico() {
@@ -19,6 +20,11 @@ install_conky_lunatico() {
     #create new link of conky
     ln -s ~/conky_book/package/conky_lunatico/conky ~/.conky
     ln -s ~/conky_book/package/conky_lunatico/conkyrc ~/.conkyrc
+}
+
+rerun() {
+    killall conky
+    ~/conky_book/conky.start.sh
 }
 
 case $1 in
@@ -30,6 +36,9 @@ case $1 in
         ;;
     uninstall)
         _uninstall
+        ;;
+    restart)
+        rerun
         ;;
     *)
         ls -1 package
