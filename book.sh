@@ -53,6 +53,9 @@ case $1 in
     uninstall)
         _uninstall
         ;;
+    start)
+        _start
+        ;;
     restart)
         _start
         _stop

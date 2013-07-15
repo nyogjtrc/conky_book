@@ -1,3 +1,3 @@
 #!/bin/sh
-conky -p 3 -d -c ~/.conkyrc
+conky -p 5 -d -c ~/.conkyrc
 exit
