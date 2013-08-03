@@ -37,10 +37,10 @@ install_conky_joey() {
     _uninstall
 
     #create new link of conky
-    ln -s ~/conky_book/package/Conky-Joey/conkyrc ~/.conkyrc
+    ln -s ~/conky_book/package/conky_joey/conkyrc ~/.conkyrc
 
     #install fonts
-    cp ~/conky_book/package/Conky-Joey/fonts/* ~/.fonts
+    cp ~/conky_book/package/conky_joey/fonts/* ~/.fonts
     fc-cache -fv
 }
 
