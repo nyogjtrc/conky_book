@@ -1,0 +1,39 @@
+alignment top_right
+background yes
+cpu_avg_samples 2
+default_color 000000
+default_outline_color 000000
+default_shade_color 000000
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+gap_x 5
+gap_y 30
+max_specials 1024
+max_user_text 10000
+maximum_width 115
+minimum_size 300 100
+net_avg_samples 2
+no_buffers yes
+override_utf8_locale yes
+own_window yes
+own_window_colour 000000
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type override
+pad_percents 2
+short_units yes
+stippled_borders 3
+text_buffer_size 8000
+total_run_times 0
+update_interval 3.0
+uppercase no
+use_spacer right
+use_xft yes
+xftalpha 1
+
+TEXT
+${offset 13}${voffset 10}${font OldSansBlack:size=22}${color #232323}${time %I}${offset 13}${time %M}${font}
+${image ~/.conky/Back.png  115x63 -p 0,0}
