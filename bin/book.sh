@@ -12,7 +12,9 @@
 
 ########################################
 
-# package path
+# env path
+BIN_PATH="$(pwd)/bin"
+LIB_PATH="$(pwd)/lib"
 PACKAGE_PATH="$(pwd)/package"
 
 # color variable
@@ -82,7 +84,7 @@ _uninstall() {
 }
 
 _start() {
-    ~/conky_book/lib/conky.start.sh
+    "$LIB_PATH"/conky.start.sh
 }
 
 _stop() {
