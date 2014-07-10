@@ -4,26 +4,43 @@ collection of some nice conky.
 
 ## how to
 
-list conky collection
+```bash
+./book <command>
 
-``./book``
+command:
+    list
+    install <package name>
+    uninstall
+    start
+    stop
+    restart
+    usage
+```
 
-unistall conky
+### list
 
-``./book uninstall``
+list all package we have
 
-install breaking bad conky
+### install <package name>
 
-``./book 1``
+install package we decide
 
-install conky_lunatico
+### uninstall
 
-``./book 2``
+uninstall current conky
 
-install Conky-Joey
+### start
 
-``./book 3``
+run conky
 
-##conky list
+### stop
 
- * breaking bad conky
+kill conky process
+
+### restart
+
+run stop, and then start
+
+### usage
+
+list usage documents

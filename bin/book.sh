@@ -24,9 +24,11 @@ NORMAL=$(tput sgr0)
 
 usage() {
     cat <<USAGE
-./book
+./book <command>
+
+command:
     list
-    install
+    install <package name>
     uninstall
     start
     stop
