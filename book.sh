@@ -1,6 +1,17 @@
 #!/bin/bash
+#
+# collection book of conky
+#
+# author: nyo
+#
 
+# package path
 PACKAGE_PATH="$(pwd)/package"
+
+# color variable
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+NORMAL=$(tput sgr0)
 
 _check_pkg() {
     INSTALL_PATH=$PACKAGE_PATH/$1
@@ -22,6 +33,11 @@ _install() {
     ln -s $INSTALL_PATH/conkyrc ~/.conkyrc
     echo "."
 
+    if [ -d "$INSTALL_PATH/fonts" ]; then
+        cp $INSTALL_PATH/fonts/* ~/.fonts
+        fc-cache -fv
+    fi
+
     sleep 1
     echo "install success."
 }
@@ -41,14 +57,7 @@ _stop() {
 
 install_breaking_bad() {
     _uninstall
-
-    #create new link of conky
-    ln -s ~/conky_book/package/breaking_bad/conky ~/.conky
-    ln -s ~/conky_book/package/breaking_bad/conkyrc ~/.conkyrc
-
-    #install fonts
-    cp ~/conky_book/package/breaking_bad/fonts/* ~/.fonts
-    fc-cache -fv
+    _install 'breaking_bad'
 }
 
 install_conky_lunatico() {
