@@ -6,23 +6,23 @@ collection of some nice conky.
 
 list conky collection
 
-``book.sh``
+``./book``
 
 unistall conky
 
-``book.sh uninstall``
+``./book uninstall``
 
 install breaking bad conky
 
-``book.sh 1``
+``./book 1``
 
 install conky_lunatico
 
-``book.sh 2``
+``./book 2``
 
 install Conky-Joey
 
-``book.sh 3``
+``./book 3``
 
 ##conky list
 
