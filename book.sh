@@ -55,7 +55,7 @@ _uninstall() {
 }
 
 _start() {
-    ~/conky_book/conky.start.sh
+    ~/conky_book/lib/conky.start.sh
 }
 
 _stop() {
