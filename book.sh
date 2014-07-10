@@ -62,10 +62,7 @@ install_breaking_bad() {
 
 install_conky_lunatico() {
     _uninstall
-
-    #create new link of conky
-    ln -s ~/conky_book/package/conky_lunatico/conky ~/.conky
-    ln -s ~/conky_book/package/conky_lunatico/conkyrc ~/.conkyrc
+    _install 'conky_lunatico'
 }
 
 install_conky_joey() {
