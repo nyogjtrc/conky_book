@@ -20,6 +20,19 @@ RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 NORMAL=$(tput sgr0)
 
+usage() {
+    cat <<USAGE
+./book
+    list
+    install
+    uninstall
+    start
+    stop
+    restart
+    usage
+USAGE
+}
+
 _check_pkg() {
     if [ -z "$1" ]
     then
@@ -77,6 +90,9 @@ _stop() {
 }
 
 case $1 in
+    list)
+        ls -1 package
+        ;;
     install)
         _install $2
         ;;
@@ -86,14 +102,14 @@ case $1 in
     start)
         _start
         ;;
+    stop)
+        _stop
+        ;;
     restart)
         _stop
         _start
         ;;
-    stop)
-        _stop
-        ;;
-    list | *)
-        ls -1 package
+    usage | *)
+        usage
         ;;
 esac
