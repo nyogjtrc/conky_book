@@ -44,3 +44,15 @@ run stop, and then start
 ### usage
 
 list usage documents
+
+
+## package
+
+basic fold structure
+
+```
+package/
+    conky/
+    fonts/
+    conkyrc
+```
