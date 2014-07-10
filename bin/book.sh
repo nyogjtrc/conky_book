@@ -21,16 +21,29 @@ GREEN=$(tput setaf 2)
 NORMAL=$(tput sgr0)
 
 _check_pkg() {
-    INSTALL_PATH=$PACKAGE_PATH/$1
-    if [ ! -d $INSTALL_PATH ]; then
-        echo "check package $1 fail."
+    if [ -z "$1" ]
+    then
+        echo "No package argument."
         exit 1;
     fi
+
+    INSTALL_PATH=$PACKAGE_PATH/$1
+
+    # check package
+    if [ ! -d $INSTALL_PATH ]; then
+        echo "Check package $1 had something wrong."
+        exit 1;
+    fi
+
     echo "check package $1 ok."
 }
 
 _install() {
     _check_pkg $1
+
+    # always uninstall before installing
+    _uninstall
+
     INSTALL_PATH=$PACKAGE_PATH/$1
 
     #create new link of conky
@@ -40,9 +53,10 @@ _install() {
     ln -s $INSTALL_PATH/conkyrc ~/.conkyrc
     echo "."
 
+    # install fonts
     if [ -d "$INSTALL_PATH/fonts" ]; then
         cp $INSTALL_PATH/fonts/* ~/.fonts
-        fc-cache -fv
+        fc-cache
     fi
 
     sleep 1
@@ -62,60 +76,9 @@ _stop() {
     killall conky
 }
 
-install_breaking_bad() {
-    _uninstall
-    _install 'breaking_bad'
-}
-
-install_conky_lunatico() {
-    _uninstall
-    _install 'conky_lunatico'
-}
-
-install_conky_joey() {
-    _uninstall
-
-    #create new link of conky
-    ln -s ~/conky_book/package/conky_joey/conkyrc ~/.conkyrc
-
-    #install fonts
-    cp ~/conky_book/package/conky_joey/fonts/* ~/.fonts
-    fc-cache -fv
-}
-
-install_rejol() {
-    _uninstall
-
-    case $1 in
-    1)
-        sub_package="bar"
-        ;;
-    2)
-        sub_package="original"
-        ;;
-    3)
-        sub_package="vertical"
-        ;;
-    *)
-        sub_package="bar"
-        ;;
-    esac
-
-    _install "reloj_conky_pack/$sub_package"
-}
-
 case $1 in
-    1)
-        install_breaking_bad
-        ;;
-    2)
-        install_conky_lunatico
-        ;;
-    3)
-        install_conky_joey
-        ;;
-    4)
-        install_rejol $2
+    install)
+        _install $2
         ;;
     uninstall)
         _uninstall
@@ -130,7 +93,7 @@ case $1 in
     stop)
         _stop
         ;;
-    *)
+    list | *)
         ls -1 package
         ;;
 esac
