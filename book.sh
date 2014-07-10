@@ -1,9 +1,16 @@
 #!/bin/bash
 #
 # collection book of conky
+# for my notebook
+# with 1600 * 900 resolution
 #
 # author: nyo
 #
+# first version: 2013-07-06
+# last version: 2014-07-11
+#
+
+########################################
 
 # package path
 PACKAGE_PATH="$(pwd)/package"
