@@ -13,9 +13,10 @@
 ########################################
 
 # env path
-BIN_PATH="$(pwd)/bin"
-LIB_PATH="$(pwd)/lib"
-PACKAGE_PATH="$(pwd)/package"
+DIR="$(cd "$(dirname "$0")" && pwd)"
+BIN_PATH="$DIR"/bin
+LIB_PATH="$DIR"/lib
+PACKAGE_PATH="$DIR"/package
 
 # color variable
 RED=$(tput setaf 1)
